@@ -13,7 +13,7 @@
                             <img class="bd-placeholder-img card-img-top" width="100%" height="300" src="{{ asset('img/' . $produit->photo_principale) }}" alt="mon produit">
 
                             <div class="card-body">
-                            <p class="card-text">{{ $produit->nom }} <br> {{ $produit->description }} </p>
+                            <p class="card-text"><span class="fw-bold">{{ $produit->nom }}</span><br><span class="fst-italic">{{ $produit->description }}</span></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
