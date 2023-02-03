@@ -15,4 +15,10 @@ class MainController extends Controller
 
         return view('shop.index', compact('produits'));
     }
+
+    public function produit() {
+        // echo "page produit";
+
+        return view('shop.produit');
+    }
 }
