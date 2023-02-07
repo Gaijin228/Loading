@@ -5,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T-Shirt</title>
-    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('img/favicon.png') }}">
     @vite('resources/js/app.js')
 
 </head>
 <body>
 
     @include('layouts.header')
-    <!-- Rubriques -->
-        <div>
-            <ul class="p-3 flex justify-start gap-4 text-md bg-gray-200">
-                <li><a href="#" class="text-red-500 hover:underline">Accueil</a></li>
-                <li><a href="#" class="text-red-500 hover:underline">Films</a></li>
-                <li><span class="text-sky-800">PROUD MARINE WIFE</span></li>
-            </ul>
-        </div>
+        <!-- Rubriques -->
+            <div>
+                <ul class="p-3 flex justify-start gap-4 text-md bg-gray-200">
+                    <li><a href="#" class="text-red-500 hover:underline">Accueil</a></li>
+                    <li><a href="#" class="text-red-500 hover:underline">Films</a></li>
+                    <li><span class="text-sky-800">PROUD MARINE WIFE</span></li>
+                </ul>
+            </div>
 
-    </nav>
-</header>
+        </nav>
+    </header>
 
 
 <main class="m-14">

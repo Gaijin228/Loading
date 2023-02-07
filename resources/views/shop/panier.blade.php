@@ -47,7 +47,7 @@
                 <tr class="table-row">
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3"></td>
-                    <td class="border border-blue-400 table-cell p-3">	Total TTC</td>
+                    <td class="border border-blue-400 table-cell p-3">Total TTC</td>
                     <td class="border border-blue-400 table-cell p-3">29.00 €</td>
                 </tr>
 
