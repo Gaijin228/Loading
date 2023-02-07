@@ -57,11 +57,9 @@
         <!-- Sous menu -->
         <div>
             <ul class="p-4 sm:flex sm:items-end justify-center gap-4 text-md text-white font-semibold bg-red-500">
-                <li><a href="#" class="hover:text-yellow-300">Films</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Séries TV</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Musique</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Jeux-vidéos</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Sport</a></li>
+                @foreach($categories as $category)
+                    <li><a href="#" class="hover:text-yellow-300">{{ $category->nom }}</a></li>
+                @endforeach
             </ul>
         </div>
 
