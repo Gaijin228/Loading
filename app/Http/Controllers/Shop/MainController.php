@@ -16,9 +16,13 @@ class MainController extends Controller
         return view('shop.index', compact('produits'));
     }
 
-    public function produit() {
+    public function produit(Request $request) {
         // echo "page produit";
 
-        return view('shop.produit');
+        // dd($request->id);
+        $produit = Produit::find($request->id);
+
+
+        return view('shop.produit', compact('produit'));
     }
 }

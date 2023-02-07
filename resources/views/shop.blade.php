@@ -7,7 +7,6 @@
     <title>T-Shirt</title>
     <link rel="stylesheet" href="{{ asset('img/favicon.png') }}">
     @vite('resources/js/app.js')
-
 </head>
 <body>
 

@@ -20,4 +20,4 @@ use App\Http\Controllers\Shop\MainController;
 
 Route::get('/', [MainController::class, 'index']);
 
-Route::get('produit', [MainController::class, 'produit']);
+Route::get('produit{id}', [MainController::class, 'produit'])->name('voir_produit');
