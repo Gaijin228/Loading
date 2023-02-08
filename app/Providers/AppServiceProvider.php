@@ -31,5 +31,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('categories', Category::where('is_online', 1)->get());
 
         });
+        
     }
 }
