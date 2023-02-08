@@ -29,12 +29,16 @@ class MainController extends Controller
         return view('shop.produit', compact('produit'));
     }
 
-    public function viewByCategory()
+    public function viewByCategory(Request $request)
     {
         //Récupérer toute les catégories >> in_online == 1
         // $categories = Category::where('is_online', 1)->get();
         // dd($categories);
 
-        return view('shop.categorie');
+        // SELECT * FROM produits = category_id = $request->id ?
+        $produits = Produit::where('category_id', $request->id)->get();
+
+
+        return view('shop.categorie', compact('produits'));
     }
 }

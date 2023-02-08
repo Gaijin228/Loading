@@ -58,7 +58,7 @@
         <div>
             <ul class="p-4 sm:flex sm:items-end justify-center gap-4 text-md text-white font-semibold bg-red-500">
                 @foreach($categories as $category)
-                    <li><a href="#" class="hover:text-yellow-300">{{ $category->nom }}</a></li>
+                    <li><a href="{{ route('voir_produit_par_categorie', $category->id) }}" class="hover:text-yellow-300">{{ $category->nom }}</a></li>
                 @endforeach
             </ul>
         </div>

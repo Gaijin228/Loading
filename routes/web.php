@@ -22,4 +22,4 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::get('produit{id}', [MainController::class, 'produit'])->name('voir_produit');
 
-Route::get('categorie', [MainController::class, 'viewByCategory']);
+Route::get('categorie{id}', [MainController::class, 'viewByCategory'])->name('voir_produit_par_categorie');
