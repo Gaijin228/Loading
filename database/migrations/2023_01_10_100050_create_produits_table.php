@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->float('prix_ht');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('photo_principale');
             $table->timestamps();
         });
