@@ -41,5 +41,10 @@ class CategoryTableSeeder extends Seeder
         $category5->nom ="Sport";
         $category5->is_online = 1;
         $category5->save();
+
+        $category6 = new Category();
+        $category6->nom ="Dessins animés";
+        $category6->is_online = 1;
+        $category6->save();
     }
 }

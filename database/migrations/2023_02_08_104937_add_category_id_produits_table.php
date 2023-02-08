@@ -41,9 +41,9 @@ return new class extends Migration
             //
 
             Schema::disableForeignKeyConstraints();
-
             $table->dropForeign(['category_id']);
-            
+            $table->dropColumn('category_id');
+
         });
     }
 };

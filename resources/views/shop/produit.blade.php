@@ -2,10 +2,10 @@
 
 @section('content')
     <!-- Afficher un produit uniquement -->
-    <section class="p-4 md:flex md:justify-center gap-8 bg-gray-100">
+    <section class="p-4 md:flex md:justify-center gap-8">
         <div class="">
             <div class="max-w-lg max-h-md border border-double shadow-lg rounded-lg bg-white">
-                <img src="{{ asset('img/' . $produit->photo_principale) }}" alt="10" class="rounded-t-lg">
+                <img src="{{ asset('img/' . $produit->photo_principale) }}" alt="produit" class="rounded-t-lg">
             </div>
         </div>
         <div>
