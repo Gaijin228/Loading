@@ -13,26 +13,28 @@ class MainController extends Controller
     {
         // SELECT * FROM produits;
         $produits = Produit::all();
-        $categories = Category::where('is_online', 1)->get();
+        // $categories = Category::where('is_online', 1)->get();
 
-        return view('shop.index', compact('produits', 'categories'));
+        return view('shop.index', compact('produits'));
     }
 
-    public function produit(Request $request) {
+    public function produit(Request $request)
+    {
         // echo "page produit";
 
         // dd($request->id);
         $produit = Produit::find($request->id);
-        $categories = Category::where('is_online', 1)->get();
+        // $categories = Category::where('is_online', 1)->get();
 
-        return view('shop.produit', compact('produit', 'categories'));
+        return view('shop.produit', compact('produit'));
     }
 
-    public function viewByCategory() {
+    public function viewByCategory()
+    {
         //Récupérer toute les catégories >> in_online == 1
-        $categories = Category::where('is_online', 1)->get();
+        // $categories = Category::where('is_online', 1)->get();
         // dd($categories);
 
-        return view('shop.categorie', compact('categories'));
+        return view('shop.categorie');
     }
 }
