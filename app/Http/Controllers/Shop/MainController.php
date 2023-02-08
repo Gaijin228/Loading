@@ -13,6 +13,7 @@ class MainController extends Controller
     {
         // SELECT * FROM produits;
         $produits = Produit::all();
+        // dd($produits);
         // $categories = Category::where('is_online', 1)->get();
 
         return view('shop.index', compact('produits'));
@@ -41,4 +42,6 @@ class MainController extends Controller
 
         return view('shop.categorie', compact('produits'));
     }
+
+    
 }

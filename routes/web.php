@@ -18,7 +18,7 @@ use App\Http\Controllers\Shop\MainController;
 //     return view('home');
 // });
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index'])->name('homepage');
 
 Route::get('produit{id}', [MainController::class, 'produit'])->name('voir_produit');
 

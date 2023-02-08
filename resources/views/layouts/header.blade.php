@@ -32,7 +32,7 @@
             <!-- Menu -->
             <ul class="flex justify-around p-4 text-white bg-cyan-800">
                 <li>
-                    <a href="#" class="flex items-center text-xl font-bold">
+                    <a href="{{ route('homepage') }}" class="flex items-center text-xl font-bold">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                         Mon T-Shirt
                     </a>
