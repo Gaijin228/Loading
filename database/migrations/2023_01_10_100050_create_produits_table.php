@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('photo_principale');
             $table->timestamps();
+            $table->unsignedInteger('category_id');
         });
     }
 

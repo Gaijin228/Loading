@@ -17,7 +17,7 @@ return new class extends Migration
 
             //
 
-            $table->unsignedInteger('category_id');
+            // $table->unsignedInteger('category_id');
 
             $table->foreign('category_id')
                   ->references('id')
