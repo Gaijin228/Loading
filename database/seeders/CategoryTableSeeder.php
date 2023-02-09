@@ -46,5 +46,29 @@ class CategoryTableSeeder extends Seeder
         $category6->nom ="Dessins animés";
         $category6->is_online = 1;
         $category6->save();
+
+        // $category7 = new Category();
+        // $category7->nom ="Les goonies";
+        // $category7->is_online = 1;
+        // $category7->parent_id = 1;
+        // $category7->save();
+
+        // $category8 = new Category();
+        // $category8->nom ="Star wars";
+        // $category8->is_online = 1;
+        // $category8->parent_id = 1;
+        // $category8->save();
+
+        // $category9 = new Category();
+        // $category9->nom ="Star Trek";
+        // $category9->is_online = 1;
+        // $category9->parent_id = 1;
+        // $category9->save();
+
+        // $category10 = new Category();
+        // $category10->nom ="Super Man";
+        // $category10->is_online = 1;
+        // $category10->parent_id = 1;
+        // $category10->save();
     }
 }

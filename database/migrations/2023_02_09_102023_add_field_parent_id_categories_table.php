@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('produits', function (Blueprint $table) {
-
+        Schema::table('categories', function (Blueprint $table) {
             //
 
-            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('parent_id')
+                  ->nullable();
 
-            $table->foreign('category_id')
+            $table->foreign('parent_id')
                   ->references('id')
                   ->on('categories')
-                  ->onDelete('cascade');
+                  ->onDelete('set null');
 
             Schema::enableForeignKeyConstraints();
 
@@ -36,13 +36,12 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('produits', function (Blueprint $table) {
-
+        Schema::table('categories', function (Blueprint $table) {
             //
 
             Schema::disableForeignKeyConstraints();
-            $table->dropForeign('category_id');
-            $table->dropColumn('category_id');
+            $table->dropForeign('parent_id');
+            $table->dropColumn('parent_id');
 
         });
     }
