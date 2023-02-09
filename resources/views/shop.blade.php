@@ -14,9 +14,9 @@
         <!-- Rubriques -->
             <div>
                 <ul class="p-3 flex justify-start gap-4 text-md bg-gray-200">
-                    <li><a href="#" class="text-red-500 hover:underline">Accueil</a></li>
+                    <li><a href="#" class="text-sky-800 hover:underline">{{ $category->nom }}</a></li>
                     <li><a href="#" class="text-red-500 hover:underline">Films</a></li>
-                    <li><span class="text-sky-800">PROUD MARINE WIFE</span></li>
+                    <li><span class="text-red-500">PROUD MARINE WIFE</span></li>
                 </ul>
             </div>
 

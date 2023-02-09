@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nom');
             $table->boolean('is_online')->default(0);
+            $table->unsignedInteger('parent_id')->nullable();
         });
     }
 

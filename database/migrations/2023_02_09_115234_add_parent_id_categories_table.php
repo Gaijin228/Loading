@@ -17,12 +17,12 @@ return new class extends Migration
             //
 
             $table->unsignedInteger('parent_id')
-                  ->nullable();
+                    ->nullable();
 
             $table->foreign('parent_id')
-                  ->references('id')
-                  ->on('categories')
-                  ->onDelete('set null');
+                    ->references('id')
+                    ->on('categories')
+                    ->onDelete('set null');
 
             Schema::enableForeignKeyConstraints();
 

@@ -38,10 +38,11 @@ class MainController extends Controller
 
         // SELECT * FROM produits = category_id = $request->id ?
         $produits = Produit::where('category_id', $request->id)->get();
+        $category = Category::find($request->id);
 
 
-        return view('shop.categorie', compact('produits'));
+        return view('shop.categorie', compact('produits', 'category'));
     }
 
-    
+
 }
