@@ -28,9 +28,16 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer(['home', 'shop'], function ($view) {
 
-            $view->with('categories', Category::where('is_online', 1)->get());
+            // Filtrer les catégories
+            $matches = [
+                'is_online' => 1,
+                'parent_id' => null
+            ];
+
+            $view->with('categories', Category::where($matches)->get());
+            // $view->with('categories', Category::where('is_online', 1)->get());
 
         });
-        
+
     }
 }

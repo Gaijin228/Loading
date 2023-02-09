@@ -14,9 +14,16 @@
         <!-- Rubriques -->
             <div>
                 <ul class="p-3 flex justify-start gap-4 text-md bg-gray-200">
+
+                    @if ($category->parent_id !== null)
+                    <li><a href="{{ route('voir_produit_par_categorie', $category->parent->id) }}" class="text-sky-800 hover:underline">{{ $category->parent->nom }}</a></li>
+                    @endif
+
                     <li><a href="#" class="text-sky-800 hover:underline">{{ $category->nom }}</a></li>
-                    <li><a href="#" class="text-red-500 hover:underline">Films</a></li>
-                    <li><span class="text-red-500">PROUD MARINE WIFE</span></li>
+                    @foreach ($category->children as $child)
+                    <li><a href="{{ route('voir_produit_par_categorie', $child->id) }}" class="text-red-500 hover:underline">{{ $child->nom }}</a></li>
+                    @endforeach
+                    {{-- <li><span class="text-red-500">PROUD MARINE WIFE</span></li> --}}
                 </ul>
             </div>
 
