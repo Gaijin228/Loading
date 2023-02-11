@@ -12,7 +12,9 @@ class MainController extends Controller
     public function index()
     {
         // SELECT * FROM produits;
-        $produits = Produit::all();
+        // $produits = Produit::all();
+        // Avec Laravel debbuger on a
+        $produits = Produit::with('category')->get();
         // dd($produits);
         // $categories = Category::where('is_online', 1)->get();
 
@@ -38,7 +40,9 @@ class MainController extends Controller
 
         // SELECT * FROM produits = category_id = $request->id ?
         $produits = Produit::where('category_id', $request->id)->get();
+
         $category = Category::find($request->id);
+        // $produits = $category->produits();
 
 
         return view('shop.categorie', compact('produits', 'category'));
