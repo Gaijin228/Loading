@@ -48,5 +48,4 @@ class MainController extends Controller
         return view('shop.categorie', compact('produits', 'category'));
     }
 
-
 }

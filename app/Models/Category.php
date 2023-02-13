@@ -37,16 +37,16 @@ class Category extends Model
         return $this->hasManyThrough(Produit::class, Category::class);
     }
 
-    // public function produits()
-    // {
-    //     $produits = $this->produitsParent()
-    //         ->with('category')
-    //         ->get()
-    //         ->merge(
-    //             $this->produitsChild()
-    //                 ->with('category')
-    //                 ->get()
-    //         );
-    //     return $produits;
-    // }
+    public function produits()
+    {
+        $produits = $this->produitsParent()
+            ->with('category')
+            ->get()
+            ->merge(
+                $this->produitsChild()
+                    ->with('category')
+                    ->get()
+            );
+        return $produits;
+    }
 }

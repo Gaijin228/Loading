@@ -24,7 +24,8 @@
                     @foreach ($category->children as $child)
                     <li><a href="{{ route('voir_produit_par_categorie', $child->id) }}" class="text-red-500 hover:underline">{{ $child->nom }}</a></li>
                     @endforeach
-                    {{-- <li><span class="text-red-500">PROUD MARINE WIFE</span></li> --}}
+
+
                 </ul>
             </div>
 

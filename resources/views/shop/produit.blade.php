@@ -3,11 +3,11 @@
 @section('content')
     <!-- Afficher un produit uniquement -->
     <section class="p-4 md:flex md:justify-center gap-8">
-        <div class="">
-            <div class="max-w-lg max-h-md border border-double shadow-lg rounded-lg bg-white">
-                <img src="{{ asset('img/' . $produit->photo_principale) }}" alt="produit" class="rounded-t-lg">
-            </div>
+
+        <div class="max-w-lg max-h-md border border-double shadow-lg rounded-lg bg-white">
+            <img src="{{ asset('img/' . $produit->photo_principale) }}" alt="produit" class="rounded-t-lg">
         </div>
+
         <div>
             <h5 class="text-3xl text-gray-600">{{ $produit->nom }}</h5>
             <div class="mt-3 flex justify-between mb-3">
@@ -45,7 +45,6 @@
         <div class="mx-14 mb-14 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 
             @foreach($produits as $produit)
-                {{-- <div> --}}
                 <div class="max-w-sm border border-double shadow-lg rounded-lg bg-white">
                     <img src="{{ asset('img/' . $produit->photo_principale) }}" alt="{{ $produit->nom }}" class="rounded-t-lg">
                     <div class="mt-4 px-4">
@@ -63,7 +62,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- </div> --}}
             @endforeach
 
         </div>
