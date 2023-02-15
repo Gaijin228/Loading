@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
 use App\Models\Produit;
+use App\Models\Category;
+use App\View\Composers\CategoryComposer;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -32,12 +34,11 @@ class AppServiceProvider extends ServiceProvider
             // Filtrer les catégories
             $matches = [
                 'is_online' => 1,
-                'parent_id' => null
+                'parent_id' => null,
             ];
 
             $view->with('categories', Category::where($matches)->get());
             // $view->with('categories', Category::where('is_online', 1)->get());
-
         });
 
     }

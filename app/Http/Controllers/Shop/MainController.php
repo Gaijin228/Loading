@@ -12,9 +12,9 @@ class MainController extends Controller
     public function index()
     {
         // SELECT * FROM produits;
-        // $produits = Produit::all();
+        $produits = Produit::all();
         // Avec Laravel debbuger on a
-        $produits = Produit::with('category')->get();
+        // $produits = Produit::with('category')->get();
         // dd($produits);
         // $categories = Category::where('is_online', 1)->get();
 
