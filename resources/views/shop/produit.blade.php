@@ -44,7 +44,7 @@
         <h4 class="mt-14 mx-28 text-2xl mb-3">Vous aimerez aussi :</h4>
         <div class="mx-14 mb-14 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 
-            @foreach($produits as $produit)
+            {{-- @foreach ($produits as $produit) --}}
                 <div class="max-w-sm border border-double shadow-lg rounded-lg bg-white">
                     <img src="{{ asset('img/' . $produit->photo_principale) }}" alt="{{ $produit->nom }}" class="rounded-t-lg">
                     <div class="mt-4 px-4">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            {{-- @endforeach --}}
 
         </div>
     </section>

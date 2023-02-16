@@ -2,10 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Produit;
 use App\Models\Category;
-use App\View\Composers\CategoryComposer;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

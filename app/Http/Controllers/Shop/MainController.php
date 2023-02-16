@@ -27,9 +27,10 @@ class MainController extends Controller
 
         // dd($request->id);
         $produit = Produit::find($request->id);
-        // $categories = Category::where('is_online', 1)->get();
+        $category = Category::find($request->id);
 
-        return view('shop.produit', compact('produit'));
+        // $categories = Category::where('is_online', 1)->get();
+        return view('shop.produit', compact('produit','category'));
     }
 
     public function viewByCategory(Request $request)
