@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\Models\Tag;
 use App\Models\Produit;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -47,6 +48,14 @@ class MainController extends Controller
 
 
         return view('shop.categorie', compact('produits', 'category'));
+    }
+
+    public function viewByTag(Request $request)
+    {
+        $tag = Tag::find($request->id);
+        $produits = $tag->produits;
+
+        return view('shop.categorie', compact('produits', 'tag'));
     }
 
 }

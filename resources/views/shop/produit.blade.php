@@ -15,7 +15,10 @@
             </div>
             <div>
                 <p class="max-w-lg text-xl text-zinc-400">
-                    {{ $produit->description }}
+                    {{ $produit->description }} <br>
+                    @foreach ($produit->tags as $tag)
+                    <span class="text-sm text-white font-bold bg-cyan-600 rounded-sm px-1 hover:scale-105"><a href="{{ route('voir_produit_par_tag', $tag->id) }}">{{ $tag->nom }}</a></span>
+                    @endforeach
                 </p>
                 <hr class="mt-4 mb-4">
                 Choisissez votre taille
@@ -50,7 +53,7 @@
                     <div class="mt-4 px-4">
                         <h5 class="text-xl text-gray-600 font-bold">Style Pack</h5>
                         <span>{{ $produit->description }}</span><br>
-                        {{-- <span class="text-md text-cyan-700 font-bold hover:text-blue-700"><a href="{{ route('voir_produit_par_categorie', $produit->category->id) }}">{{ $produit->category->nom }}</a></span><br> --}}
+                        <span class="text-md text-cyan-700 font-bold hover:text-blue-700"><a href="{{ route('voir_produit_par_categorie', $produit->category->id) }}">{{ $produit->category->nom }}</a></span><br>
                         <div class="mt-3 flex justify-between mb-3">
                             <span class="text-lg text-blue-700 font-bold">{{ number_format($produit->prix_ht, 2) }} €</span>
                             <a href="{{ route('voir_produit', $produit->id) }}" target="_blank" class="bg-yellow-400 hover:bg-cyan-700 rounded-md px-1">
