@@ -50,7 +50,7 @@
                     <div class="mt-4 px-4">
                         <h5 class="text-xl text-gray-600 font-bold">Style Pack</h5>
                         <span>{{ $produit->description }}</span><br>
-                        <span class="text-md text-cyan-700 font-bold hover:text-blue-700"><a href="{{ route('voir_produit_par_categorie', $produit->category->id) }}">{{ $produit->category->nom }}</a></span><br>
+                        {{-- <span class="text-md text-cyan-700 font-bold hover:text-blue-700"><a href="{{ route('voir_produit_par_categorie', $produit->category->id) }}">{{ $produit->category->nom }}</a></span><br> --}}
                         <div class="mt-3 flex justify-between mb-3">
                             <span class="text-lg text-blue-700 font-bold">{{ number_format($produit->prix_ht, 2) }} €</span>
                             <a href="{{ route('voir_produit', $produit->id) }}" target="_blank" class="bg-yellow-400 hover:bg-cyan-700 rounded-md px-1">
