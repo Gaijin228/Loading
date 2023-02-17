@@ -40,6 +40,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('produit_tag');
-        Schema::disableForeignKeyConstraints();
     }
 };
