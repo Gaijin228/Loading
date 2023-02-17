@@ -23,6 +23,6 @@ class Produit extends Model
 
     public function recommandations()
     {
-        return $this->belongsToMany(Produit::class);
+        return $this->belongsToMany(Produit::class, 'produit_recommande', 'produit_id', 'produit_recommande_id');
     }
 }
