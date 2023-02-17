@@ -20,4 +20,9 @@ class Produit extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function recommandations()
+    {
+        return $this->belongsToMany(Produit::class);
+    }
 }
