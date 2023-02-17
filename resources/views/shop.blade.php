@@ -14,12 +14,13 @@
         <!-- Rubriques -->
             <div>
                 <ul class="p-3 flex justify-start gap-4 text-md bg-gray-200">
+                    <li><a href="{{ route('homepage') }}" class="text-sky-800 hover:underline">Accueil</a></li>
                     @if (isset($category))
                         @if ($category->parent_id !== null)
                         <li><a href="{{ route('voir_produit_par_categorie', $category->parent->id) }}" class="text-red-500 hover:underline">{{ $category->parent->nom }}</a></li>
                         @endif
 
-                        <li><a href="#" class="text-sky-800 hover:underline">{{ $category->nom }}</a></li>
+                        <li><a href="#" class="text-red-500 hover:underline">{{ $category->nom }}</a></li>
 
                         @foreach ($category->children as $child)
                         <li><a href="{{ route('voir_produit_par_categorie', $child->id) }}" class="text-red-500 hover:underline">{{ $child->nom }}</a></li>
