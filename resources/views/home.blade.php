@@ -23,7 +23,7 @@
     <footer>
         <div class="flex justify-between sm:mt-14 mt-6 sm:mb-14 mb-6 px-20 text-lg">
             <span class="text-gray-600">Mon T-Shirt</span>
-            <a href="#" class="text-blue-500 hover:text-blue-600 hover:underline">Back to top</a>
+            <a href="#ancre" class="text-blue-500 hover:text-blue-600 hover:underline">Back to top</a>
         </div>
     </footer>
 

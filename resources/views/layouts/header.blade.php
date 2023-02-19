@@ -1,6 +1,6 @@
 <!-- En tête -->
 <header>
-    <nav>
+    <nav id="ancre">
         <!-- Action sur le bouton menu -->
         <div x-data="{ open: false }">
             <!-- Contenu du bouton menu a derouler -->
