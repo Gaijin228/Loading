@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shop;
 
+
 use Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,11 +14,19 @@ class CartController extends Controller
     public function add()
     {
         Cart::add(array(
-            'id' => 456, // inique row ID
+            'id' => 456,
             'name' => 'Sample Item',
             'price' => 67.99,
-            'quantity' => 4,
+            'quantity' => 2,
             'attributes' => array()
         ));
+
+        return redirect(route('cart_index'));
+    }
+
+    public function index()
+    {
+        $content = Cart::getContent();
+        dd($content);
     }
 }

@@ -28,3 +28,5 @@ Route::get('categorie{id}', [MainController::class, 'viewByCategory'])->name('vo
 Route::get('tag{id}', [MainController::class, 'viewByTag'])->name('voir_produit_par_tag');
 
 Route::get('panier/add', [CartController::class, 'add'])->name('cart_add');
+
+Route::get('panier', [CartController::class, 'index'])->name('cart_index');

@@ -213,5 +213,5 @@ return [
     ])->toArray(),
 
     'Cart' => Darryldecode\Cart\Facades\CartFacade::class
-    
+
 ];
