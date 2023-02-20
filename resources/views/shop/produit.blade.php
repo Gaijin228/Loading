@@ -35,7 +35,7 @@
                         </select>
 
                         <label for="qty">quantité</label>
-                        <input name="qty" id="qty" type="number" value="1">
+                        <input name="qty" id="qty" type="number" value="1" class="w-full h-10 border border-double border-slate-300 rounded-md hover:border-cyan-600">
                     </form>
                     <button form="panier_add" type="submit" class="flex justify-center pt-2 gap-2 mt-2 w-full h-10 bg-yellow-200 rounded-md hover:bg-yellow-400 text-green-900">
                         <span class="font-bold text-blue-600 hover:text-black">Ajouter au Panier</span>

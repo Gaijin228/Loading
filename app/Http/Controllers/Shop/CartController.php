@@ -20,7 +20,7 @@ class CartController extends Controller
             'id' => $produit->id,
             'name' => $produit->nom,
             'price' => $produit->prix_ht,
-            'quantity' => 1,
+            'quantity' => $request->qty,
             'attributes' => array('size' => $request->size)
         ));
 
