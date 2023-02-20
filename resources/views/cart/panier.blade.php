@@ -1,9 +1,11 @@
 @extends('home')
 
 @section('content')
-    <section class="mx-14 inline px-3 py-1 rounded-md text-3xl font-bold text-white bg-blue-500">Votre panier</section>
+    <section class="mx-14 mt-14 inline-block px-3 py-1 rounded-md text-3xl font-bold text-white bg-blue-500">
+        Votre panier
+    </section>
     <section class="mt-4 mx-14">
-
+        {{-- {{dd($content)}} --}}
         <table class="table-auto w-full text-md border-2 border-collapse border-blue-500">
 
             <thead class="table-header-group font-bold">
@@ -16,19 +18,23 @@
             </thead>
 
             <tbody class="table-row-group">
-
-                <tr class="table-row">
-                    <td class="border border-blue-400 table-cell p-3">
-                        <img class="inline-block border-2 rounded-full w-24" src="../dist/img/10.jpg" alt="">
-                        <span class="px-3">Proud marine wife</span>
-                    </td>
-                    <td class="border border-blue-400 table-cell p-3">
-                        <input class="border-2 hover:border-blue-700 rounded-md p-3 w-20" type="number" name="quantité" id="qte" value="1">
-                        <a href=""><i class="fas fa-sync"></i></a>
-                    </td>
-                    <td class="border border-blue-400 table-cell p-3">29.00 €</td>
-                    <td class="border border-blue-400 table-cell p-3">29.00 €</td>
-                </tr>
+                @foreach ($content as $produit)
+                    <tr class="table-row">
+                        <td class="border border-blue-400 table-cell p-3">
+                            <img class="inline-block border-2 rounded-full w-24" src="{{ asset('img/' . $produit->attributes['photo']) }}" alt="">
+                            <span class="px-3 font-semibold">{{ $produit->name }}</span>
+                            <p class="px-6 py-2 text-zinc-600">
+                                Taille : <span class="font-bold text-lg">{{ strtoupper($produit->attributes['size']) }}</span>
+                            </p>
+                        </td>
+                        <td class="border border-blue-400 table-cell p-3">
+                            <input class="border-2 hover:border-blue-700 rounded-md p-3 w-20" type="number" value="{{ $produit->quantity }}">
+                            <a href=""><i class="fas fa-sync text-blue-500"></i></a>
+                        </td>
+                        <td class="border border-blue-400 table-cell p-3">{{ number_format($produit->price, 2) }} €</td>
+                        <td class="border border-blue-400 table-cell p-3">{{ number_format(($produit->price * $produit->quantity), 2) }} €</td>
+                    </tr>
+                @endforeach
 
                 <tr class="table-row">
                     <td class="border border-blue-400 table-cell p-3"></td>
@@ -48,7 +54,7 @@
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3">Total TTC</td>
-                    <td class="border border-blue-400 table-cell p-3">29.00 €</td>
+                    <td class="border border-blue-400 table-cell p-3">{{ number_format($total_ttc_panier, 2) }} €</td>
                 </tr>
 
             </tbody>

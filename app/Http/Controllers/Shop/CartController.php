@@ -21,7 +21,7 @@ class CartController extends Controller
             'name' => $produit->nom,
             'price' => $produit->prix_ht,
             'quantity' => $request->qty,
-            'attributes' => array('size' => $request->size)
+            'attributes' => array('size' => $request->size, 'photo' => $produit->photo_principale)
         ));
 
         return redirect(route('cart_index'));
@@ -29,7 +29,12 @@ class CartController extends Controller
 
     public function index()
     {
+
         $content = Cart::getContent();
-        dd($content);
+        // dd($content);
+
+        $total_ttc_panier = Cart::getTotal();
+
+        return view('cart.panier', compact('content', 'total_ttc_panier'));
     }
 }
