@@ -31,8 +31,8 @@
                             <input class="border-2 hover:border-blue-700 rounded-md p-3 w-20" type="number" value="{{ $produit->quantity }}">
                             <a href=""><i class="fas fa-sync text-blue-500"></i></a>
                         </td>
-                        <td class="border border-blue-400 table-cell p-3">{{ number_format($produit->price, 2) }} €</td>
-                        <td class="border border-blue-400 table-cell p-3">{{ number_format(($produit->price * $produit->quantity), 2) }} €</td>
+                        <td class="border border-blue-400 table-cell p-3">{{ $produit->attributes['prix_ttc'] }} €</td>
+                        <td class="border border-blue-400 table-cell p-3">{{ number_format($produit->attributes['prix_ttc'] * $produit->quantity, 2) }} €</td>
                     </tr>
                 @endforeach
 
@@ -40,14 +40,14 @@
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3">Total HT</td>
-                    <td class="border border-blue-400 table-cell p-3">24.17 €</td>
+                    <td class="border border-blue-400 table-cell p-3">{{ number_format($total_ht_panier, 2) }} €</td>
                 </tr>
 
                 <tr class="table-row">
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3"></td>
                     <td class="border border-blue-400 table-cell p-3">TVA (20%)</td>
-                    <td class="border border-blue-400 table-cell p-3">4.83 €</td>
+                    <td class="border border-blue-400 table-cell p-3">{{ number_format($tva, 2) }} €</td>
                 </tr>
 
                 <tr class="table-row">

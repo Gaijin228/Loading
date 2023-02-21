@@ -11,6 +11,8 @@ class Produit extends Model
 {
     use HasFactory;
 
+    private static $facteur_tva = 1.2;
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -24,5 +26,12 @@ class Produit extends Model
     public function recommandations()
     {
         return $this->belongsToMany(Produit::class, 'produit_recommande', 'produit_id', 'produit_recommande_id');
+    }
+
+    public function prixTTC()
+    {
+        $prix_ttc = $this->prix_ht * self::$facteur_tva;
+
+        return number_format($prix_ttc, 2);
     }
 }

@@ -11,7 +11,7 @@
         <div>
             <h5 class="text-3xl text-gray-600">{{ $produit->nom }}</h5>
             <div class="mt-3 flex justify-between mb-3">
-                <span class="text-lg text-blue-700 font-bold">{{ number_format($produit->prix_ht, 2) }} €</span>
+                <span class="text-lg text-blue-700 font-bold">{{ $produit->prixTTC() }} €</span>
             </div>
             <div>
                 <p class="max-w-lg text-xl text-zinc-400">

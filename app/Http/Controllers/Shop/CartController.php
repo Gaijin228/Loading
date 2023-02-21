@@ -7,6 +7,7 @@ use Cart;
 use App\Models\Produit;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Darryldecode\Cart\CartCondition;
 
 class CartController extends Controller
 {
@@ -21,7 +22,7 @@ class CartController extends Controller
             'name' => $produit->nom,
             'price' => $produit->prix_ht,
             'quantity' => $request->qty,
-            'attributes' => array('size' => $request->size, 'photo' => $produit->photo_principale)
+            'attributes' => array('size' => $request->size, 'photo' => $produit->photo_principale, 'prix_ttc' => $produit->prixTTC())
         ));
 
         return redirect(route('cart_index'));
@@ -33,8 +34,21 @@ class CartController extends Controller
         $content = Cart::getContent();
         // dd($content);
 
-        $total_ttc_panier = Cart::getTotal();
+        // add single condition on a cart bases
 
-        return view('cart.panier', compact('content', 'total_ttc_panier'));
+        $condition = new CartCondition(array(
+            'name' => 'VAT 20%',
+            'type' => 'tax',
+            'target' => 'subtotal', // this condition will be applied to cart's subtotal when getSubTotal() is called.
+            'value' => '20%',
+        ));
+
+        Cart::condition($condition);
+
+        $total_ht_panier = Cart::getSubTotal();
+        $total_ttc_panier = Cart::getTotal();
+        $tva = $total_ttc_panier - $total_ht_panier;
+
+        return view('cart.panier', compact('content', 'total_ttc_panier', 'total_ht_panier', 'tva'));
     }
 }
